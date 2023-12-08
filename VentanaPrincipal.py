@@ -1,4 +1,5 @@
 import tkinter as tk
+from VentanaVerificacion import VentanaVerification
 
 class VentanaPrincipal:
     def __init__(self, master):
@@ -32,12 +33,18 @@ class VentanaPrincipal:
 
         # Botón "Siguiente"
         tk.Button(self.ventana1, text="Siguiente", command=self.mostrar_ventana2, font=("Helvetica", 12)).grid(row=4, columnspan=2, pady=20)
+        self.ventana_verification = None  # Inicializar como None
 
     def mostrar_ventana2(self):
-        # Puedes agregar lógica adicional aquí para procesar la entrada si es necesario
-        print("Ecuación:", self.ecuacion_var.get())
-        print("Método:", self.metodo_var.get())
-        print("Error:", self.error_var.get())
+        # Llamar al método para mostrar la ventana VentanaVerification
+        if not self.ventana_verification:
+            # Limpiar la ventana principal (destruir todos los widgets)
+            for widget in self.master.winfo_children():
+                widget.destroy()
+
+            # Crear e inicializar la instancia de VentanaVerification
+            self.ventana_verification = VentanaVerification(self.master)
+            self.ventana_verification.mostrar_ventana()
 
 if __name__ == "__main__":
     root = tk.Tk()

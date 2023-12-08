@@ -1,11 +1,12 @@
 import tkinter as tk
 from tkinter import scrolledtext
 
+
 class VentanaResultados:
     def __init__(self, resultados):
         self.ventana_resultados = tk.Tk()
         self.ventana_resultados.title("Resultados de Métodos Numéricos")
-
+        self.enlace=None
         # Área de texto para mostrar resultados
         self.resultados_text = scrolledtext.ScrolledText(self.ventana_resultados, width=40, height=10, wrap=tk.WORD)
         self.resultados_text.pack(padx=20, pady=20)
