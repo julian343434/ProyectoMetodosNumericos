@@ -132,11 +132,11 @@ class VentanaPrincipal(Ventana):
     def crear_widgets_metodo3(self):
         self.metadata = [None] * 5
         # Crea y coloca widgets específicos para el Método 2
-        tk.Label(self.ventana_actual, text="Límite Inferior (Xo):", font=("Helvetica", 12)).grid(row=3, column=0, sticky="e")
+        tk.Label(self.ventana_actual, text="punto inicial:", font=("Helvetica", 12)).grid(row=3, column=0, sticky="e")
         tk.Entry(self.ventana_actual, textvariable=self.limite_inferior, width=10).grid(row=3, column=1, padx=10)
         self.metadata.append(self.limite_inferior.get())
 
-        tk.Label(self.ventana_actual, text="Límite Superior (Xl):", font=("Helvetica", 12)).grid(row=4, column=0, sticky="e")
+        tk.Label(self.ventana_actual, text="punto final:", font=("Helvetica", 12)).grid(row=4, column=0, sticky="e")
         tk.Entry(self.ventana_actual, textvariable=self.limite_superior, width=10).grid(row=4, column=1, padx=10)
         self.metadata.append(self.limite_superior.get())
 
