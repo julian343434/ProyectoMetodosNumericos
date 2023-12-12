@@ -1,16 +1,15 @@
 import tkinter as tk
 
-class Ventana :
+class Ventana(tk.Tk) :
+    ventana_proxima=None
+    ventan_anterior=None
+    ventana_actual=None
     def __init__(self,alto,ancho,master):
-
         self.alto=alto
         self.ancho=ancho
         self.master = master
         self.estado_ventana=None
         self.master.geometry(f"{alto}x{ancho}")
-
-        self.ventana_proxima=None
-        self.ventan_anterio=None
 
         self.ventana_actual = tk.Frame(self.master, padx=20, pady=20)
         self.ventana_actual.pack()
